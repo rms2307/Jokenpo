@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:onClick="selecionadoPedra"
+    tools:context=".views.MainActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -18,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgResultado"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginTop="32dp"
@@ -36,13 +37,14 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imgResultado" />
 
     <ImageView
         android:id="@+id/pedra"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="52dp"
+        android:onClick="selecionadoPedra"
         app:layout_constraintEnd_toStartOf="@+id/papel"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +56,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="52dp"
+        android:onClick="selecionadoPapel"
         app:layout_constraintEnd_toStartOf="@+id/tesoura"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/pedra"
@@ -65,6 +68,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="52dp"
+        android:onClick="selecionadoTesoura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/papel"
