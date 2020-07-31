@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.rms2307.jokenpo.R;
 import com.rms2307.jokenpo.models.Utils;
@@ -20,22 +21,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void selecionadoPedra(View v){
-        this.opcaoApp();
+    public void selecionadoPedra(View v) {
+        this.jogada("pedra");
     }
 
-    public void selecionadoPapel(View v){
-        this.opcaoApp();
+    public void selecionadoPapel(View v) {
+        this.jogada("papel");
     }
 
-    public void selecionadoTesoura(View v){
-        this.opcaoApp();
+    public void selecionadoTesoura(View v) {
+        this.jogada("tesoura");
     }
 
-    public void opcaoApp(){
+    public void jogada(String opcaoUsuario) {
+        TextView txtResultado = findViewById(R.id.txtResultado);
         ImageView imagemResultado = findViewById(R.id.imgResultado);
 
-        switch (utils.opcaoApp()){
+        switch (utils.opcaoApp()) {
             case "pedra":
                 imagemResultado.setImageResource(R.drawable.pedra);
                 break;
@@ -46,8 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 imagemResultado.setImageResource(R.drawable.tesoura);
                 break;
         }
-
-
+        txtResultado.setText(utils.jogada(opcaoUsuario));
     }
 
 }
